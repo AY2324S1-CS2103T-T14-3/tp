@@ -27,8 +27,8 @@ public class PersonBuilder {
     private Phone phone;
     private Email email;
     private Address address;
-    private Set<Tag> tags;
     private Remark remark;
+    private Set<Tag> tags;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -38,8 +38,8 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
-        tags = new HashSet<>();
         remark = new Remark(DEFAULT_REMARK);
+        tags = new HashSet<>();
     }
 
     /**
@@ -50,8 +50,8 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
-        tags = new HashSet<>(personToCopy.getTags());
         remark = personToCopy.getRemark();
+        tags = new HashSet<>(personToCopy.getTags());
     }
 
     /**
@@ -104,7 +104,7 @@ public class PersonBuilder {
 
 
     public Person build() {
-        return new Person(name, phone, email, address, tags, remark);
+        return new Person(name, phone, email, address, remark, tags);
     }
 
 }
