@@ -136,6 +136,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/hyc17003.md",
+      "title": "Yi Chee's Project Portfolio Page",
+      "headings": {
+        "project-healthsync": "Project: HealthSync"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "team/johndoe.md",
       "title": "John Doe's Project Portfolio Page",
       "headings": {
