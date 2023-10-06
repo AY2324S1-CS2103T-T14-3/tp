@@ -107,7 +107,7 @@
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
-        "ab-3-user-guide": "AB-3 User Guide",
+        "healthsync-user-guide": "HealthSync User Guide",
         "quick-start": "Quick start",
         "features": "Features",
         "auto-save-nil": "Auto Save : nil",
