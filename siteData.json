@@ -160,6 +160,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/nubnubyas.md",
+      "title": "Zhang Yiheng's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "team/weeehung.md",
       "title": "Wee Hung's Project Portfolio Page",
       "headings": {
@@ -172,14 +180,6 @@
       "title": "Wang Zhi Wren's Project Portfolio Page",
       "headings": {
         "project-healthsync": "Project: HealthSync"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/yiheng.md",
-      "title": "Zhang Yiheng's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
     },
