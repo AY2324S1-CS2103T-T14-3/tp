@@ -14,23 +14,16 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("delete 1")
+[-> LogicManager : execute("delete n/John Doe")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("delete 1")
+LogicManager -> AddressBookParser : parseCommand("delete n/John Doe")
 activate AddressBookParser
 
-create DeleteCommandParser
-AddressBookParser -> DeleteCommandParser
+AddressBookParser -> DeleteCommandParser : parse("delete n/John Doe")
 activate DeleteCommandParser
 
-DeleteCommandParser --> AddressBookParser
-deactivate DeleteCommandParser
-
-AddressBookParser -> DeleteCommandParser : parse("1")
-activate DeleteCommandParser
-
-create DeleteCommand
+Create DeleteCommand
 DeleteCommandParser -> DeleteCommand
 activate DeleteCommand
 
@@ -39,9 +32,6 @@ deactivate DeleteCommand
 
 DeleteCommandParser --> AddressBookParser : d
 deactivate DeleteCommandParser
-'Hidden arrow to position the destroy marker below the end of the activation bar.
-DeleteCommandParser -[hidden]-> AddressBookParser
-destroy DeleteCommandParser
 
 AddressBookParser --> LogicManager : d
 deactivate AddressBookParser
@@ -49,14 +39,25 @@ deactivate AddressBookParser
 LogicManager -> DeleteCommand : execute()
 activate DeleteCommand
 
-DeleteCommand -> Model : deletePerson(1)
+DeleteCommand -> Model : getFilteredPersonList()
+activate Model
+
+Model --> DeleteCommand : list
+deactivate Model
+
+DeleteCommand -> Model : findPersonByName("John Doe")
+activate Model
+
+Model --> DeleteCommand : person
+deactivate Model
+
+DeleteCommand -> Model : deletePerson(person)
 activate Model
 
 Model --> DeleteCommand
 deactivate Model
 
-create CommandResult
-DeleteCommand -> CommandResult
+DeleteCommand -> CommandResult : success
 activate CommandResult
 
 CommandResult --> DeleteCommand
@@ -65,6 +66,7 @@ deactivate CommandResult
 DeleteCommand --> LogicManager : result
 deactivate DeleteCommand
 
-[<--LogicManager
+<-- LogicManager
 deactivate LogicManager
+
 @enduml

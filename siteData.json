@@ -53,6 +53,7 @@
         "implementation": "Implementation",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "implementation-of-single-optional-appointment-field": "Implementation of Single, optional Appointment Field",
+        "delete-feature": "Delete Feature",
         "addition-of-interface-for-find-type-commands": "Addition of Interface for Find-type commands",
         "proposed-data-archiving": "[Proposed] Data archiving",
         "edit-feature": "Edit Feature",

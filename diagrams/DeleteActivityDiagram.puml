@@ -1,0 +1,28 @@
+@startuml Delete Patient Data
+start
+
+:Enter delete command;
+:Parse arguments;
+
+if (arguments valid?) then (yes)
+
+:Execute delete command;
+:Find Patient data;
+
+if (Patient data found?) then (yes)
+
+:Delete data;
+:Notify user of success;
+else (no)
+
+:Notify user of failure;
+endif
+
+else (no)
+
+:Notify user of failure;
+
+endif
+
+stop
+@enduml
