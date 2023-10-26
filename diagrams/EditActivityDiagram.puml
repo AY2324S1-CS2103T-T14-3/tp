@@ -1,0 +1,19 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+
+start
+:User executes command;
+
+if () then ([Valid Details])
+  :Update Model with New Details;
+else ([Else])
+endif
+stop
+@enduml
+
+
+
+
+

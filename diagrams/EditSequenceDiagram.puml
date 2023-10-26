@@ -1,0 +1,24 @@
+@startuml
+
+actor User
+participant ":EditCommand" as EditCommand
+participant ":Model" as Model
+
+User -> EditCommand: Execute Edit Command
+EditCommand -> Model: Execute Edit
+alt Person Found
+  Model -> Model: Find Person to Edit
+  Model --> EditCommand: Person Found
+  EditCommand -> EditCommand: Create Edited Person
+  EditCommand -> Model: Set Edited Person
+  Model -> Model: Update Filtered Person List
+  Model --> EditCommand: Update Complete
+  EditCommand --> User: Edit Successful
+else Person Not Found
+  Model -> Model: Find Person to Edit
+  Model --> EditCommand: Person Not Found
+  EditCommand --> User: Person Not Found Error
+end
+User -> EditCommand: (Additional Interactions)
+
+@enduml
