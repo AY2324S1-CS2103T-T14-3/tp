@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Enter Find Command;
+
+if () then (parameter is NRIC or name)
+  if () then (parameter is NRIC)
+    :NRIC is parsed;
+    if () then (a patient has a matching NRIC)
+    :return patient details for matched patient;
+    else (no patient has a matching NRIC)
+    :notify the user that no patient was found;
+    endif
+
+  else (parameter is name)
+    :name is parsed;
+    if () then (patients have matching names)
+    :return patient details for all matched patients;
+    else (no patient has a matching name)
+    :notify the user that no patient was found;
+    endif
+  endif
+
+else (parameter is neither NRIC nor name)
+  :Exception is thrown;
+endif
+
+stop
+
+@enduml

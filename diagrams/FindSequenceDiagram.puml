@@ -1,0 +1,19 @@
+@startuml
+title Find Sequence Diagram
+
+actor User as U
+participant ":FindCommandParser" as Parser
+participant ":FindCommand" as Command
+participant ":Model" as Model
+participant ":CommandResult" as CommandResult
+
+U -> Parser: Enter Find Command
+Parser -> Parser: Parse command
+Parser -> Command: Create new FindCommand(predicate)
+
+Command -> Model: execute(model)
+Model -> Model: updateFilteredPersonList(predicate)
+Command --> CommandResult: Create new CommandResult()
+
+CommandResult --> U: Display Filtered List
+@enduml
