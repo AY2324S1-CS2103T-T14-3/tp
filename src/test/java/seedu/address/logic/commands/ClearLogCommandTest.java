@@ -117,6 +117,11 @@ public class ClearLogCommandTest {
         }
 
         @Override
+        public ObservableList<Person> getUnfilteredPersonList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public ObservableList<Person> getLoggedFilteredPersonList() {
             throw new AssertionError("This method should not be called.");
         }

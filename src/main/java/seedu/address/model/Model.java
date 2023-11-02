@@ -110,6 +110,9 @@ public interface Model {
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Person> getFilteredPersonList();
 
+    /** Returns an unmodifiable view of the unfiltered person list */
+    ObservableList<Person> getUnfilteredPersonList();
+
     /** Returns an unmodifiable view of the logged filtered person list saved when user execute Log Command*/
     ObservableList<Person> getLoggedFilteredPersonList();
 

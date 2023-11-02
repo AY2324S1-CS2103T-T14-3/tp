@@ -79,7 +79,7 @@ public class DeleteCommand extends UndoableCommand {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> lastShownList = model.getFilteredPersonList();
+        List<Person> lastShownList = model.getUnfilteredPersonList();
 
         Optional<Person> personOptional = CommandUtil.findPersonByIdentifier(name, nric, lastShownList);
 
@@ -93,6 +93,7 @@ public class DeleteCommand extends UndoableCommand {
         if (deletePersonDescriptor.isAllFalse()) {
             model.deletePerson(personToDelete);
             model.addToHistory(this);
+            model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
             return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(personToDelete)));
         } else {
             editedPerson = createDeletePerson(personToDelete, deletePersonDescriptor);

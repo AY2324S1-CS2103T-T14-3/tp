@@ -52,7 +52,8 @@ public class ModelManager implements Model {
         this(new AddressBook(), new UserPrefs());
     }
 
-    //=========== UserPrefs ==================================================================================
+    // =========== UserPrefs
+    // ==================================================================================
 
     @Override
     public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
@@ -87,7 +88,8 @@ public class ModelManager implements Model {
         userPrefs.setAddressBookFilePath(addressBookFilePath);
     }
 
-    //=========== AddressBook ================================================================================
+    // =========== AddressBook
+    // ================================================================================
 
     @Override
     public void setAddressBook(ReadOnlyAddressBook addressBook) {
@@ -123,7 +125,8 @@ public class ModelManager implements Model {
         addressBook.setPerson(target, editedPerson);
     }
 
-    //=========== Undo ======================================================================================
+    // =========== Undo
+    // ======================================================================================
 
     @Override
     public void addToHistory(UndoableCommand command) {
@@ -145,15 +148,28 @@ public class ModelManager implements Model {
         return commandHistory.size();
     }
 
-    //=========== Filtered Person List Accessors =============================================================
+    // =========== Filtered Person List Accessors
+    // =============================================================
 
     /**
-     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
+     * Returns an unmodifiable view of the list of {@code Person} backed by the
+     * internal list of
      * {@code versionedAddressBook}
      */
     @Override
     public ObservableList<Person> getFilteredPersonList() {
         return filteredPersons;
+    }
+
+    /**
+     * Returns an unmodifiable view of the original, unfiltered list of persons
+     * contained in the address book.
+     * Modifications to this list will not affect the internal state of the address
+     * book.
+     */
+    @Override
+    public ObservableList<Person> getUnfilteredPersonList() {
+        return addressBook.getPersonList();
     }
 
     @Override
@@ -169,6 +185,7 @@ public class ModelManager implements Model {
 
     /**
      * Updates the foundPersonsList for logbook, executed by Find Command only
+     *
      * @param predicate This is the condition to filter the personsList by
      */
     public void updateFoundPersonsList(Predicate<Person> predicate) {
@@ -197,7 +214,8 @@ public class ModelManager implements Model {
                 && filteredPersons.equals(otherModelManager.filteredPersons);
     }
 
-    //=========== LogBook ================================================================================
+    // =========== LogBook
+    // ================================================================================
 
     @Override
     public LogBook getLogBook() {
