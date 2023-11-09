@@ -123,7 +123,7 @@
         "editing-a-patient-s-details-edit": "Editing a Patient's Details: edit",
         "deleting-a-patient-or-field-delete": "Deleting a Patient or Field: delete",
         "delete-all-patients-clear": "Delete All Patients: clear",
-        "locating-patients-by-name-or-id-find": "Locating Patients by Name or ID: find",
+        "locating-patients-by-name-id-or-appointment-find": "Locating Patients by Name, ID or Appointment: find",
         "preserving-a-find-command-result-log": "Preserving a find Command Result: log",
         "adding-a-new-find-command-result-to-the-log-alog": "Adding a New find Command Result to the Log: alog",
         "clearing-data-from-the-log-clog": "Clearing Data from the Log: clog",
