@@ -194,7 +194,8 @@
       "src": "team/weeehung.md",
       "title": "Wee Hung's Project Portfolio Page",
       "headings": {
-        "project-healthsync": "Project: HealthSync"
+        "project-healthsync": "Project: HealthSync",
+        "references": "References:"
       },
       "headingKeywords": {}
     },
