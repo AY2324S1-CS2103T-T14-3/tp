@@ -57,7 +57,7 @@ public class Messages {
                 .append(person.getAddress())
                 .append(";\n")
                 .append("Appointment: ")
-                .append(person.getAppointment().orElse(person.getAppointment().orElse(null)))
+                .append(person.getAppointment().isPresent() ? person.getAppointment().get() : "")
                 .append("; Medical Histories: ");
 
         person.getMedicalHistories().forEach(builder::append);
