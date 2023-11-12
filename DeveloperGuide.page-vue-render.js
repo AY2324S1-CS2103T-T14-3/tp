@@ -557,6 +557,6 @@ with(this){return _c('h2',{attrs:{"id":"appendix-planned-enhancements"}},[_c('st
 with(this){return _c('ol',[_c('li',[_v("Our current app is unable to handle scenarios where patients share the same name. We plan to make it possible for\nusers to add patients with the same name into HealthSync.")]),_v(" "),_c('li',[_v("Our current app does not handle text wrapping on the UI well, and certain text labels may be obscured when user input\nis too long. We plan to explicitly denote the labels on the individual UI cards and allow inputs to stretch its\ncontainer should it be a long input, so users would be able to discern easily what elements they are looking at on\nthe UI.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Sun, 12 Nov 2023, 21:39:59 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Mon, 13 Nov 2023, 1:29:20 GMT+8]")])])])}
 }];
   
