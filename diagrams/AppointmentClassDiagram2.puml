@@ -1,0 +1,32 @@
+@startuml
+!include style.puml
+
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+skinparam FontColor #FFFFFF
+
+package Model {
+    enum InputSource <<enumeration>> {
+        <color:#FFFFFF>USER_INPUT</color>
+        <color:#FFFFFF>STORAGE</color>
+    }
+    class HiddenElem #FFFFFF
+    class Appointment {
+        <color:#FFFFFF>- date: LocalDate</color>
+        <color:#FFFFFF>- start: LocalTime</color>
+        <color:#FFFFFF>- end: LocalTime</color>
+        <color:#FFFFFF>- Appointment()</color>
+        <color:#FFFFFF><u>+of(appointment: String, origin: InputSource): Appointment</u></color>
+    }
+    class Person
+}
+
+show InputSource attributes
+show Appointment member
+
+Person *--> "0..1" Appointment
+Person -down[hidden]-> InputSource
+Appointment -right[hidden]-> InputSource
+HiddenElem -down[hidden]->InputSource
+@enduml

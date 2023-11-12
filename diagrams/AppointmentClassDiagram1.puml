@@ -1,0 +1,40 @@
+@startuml
+!include style.puml
+
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+skinparam FontColor #FFFFFF
+
+class HiddenOutside #FFFFFF
+
+package UI {
+    class Filler #FFFFFF
+}
+
+package Storage {
+    class Filler #FFFFFF
+}
+
+package Model {
+    class AddressBook
+    class Appointment
+    class Person {
+        <color:#FFFFFF>getName() : Name</color>
+        <color:#FFFFFF>getAppointment() : Optional<Appointment></color>
+    }
+    class Name
+}
+
+show Person member
+
+HiddenOutside .down.> AddressBook
+HiddenOutside .down.> Person
+
+AddressBook -> "*" Person
+UI -right-> Person
+Storage -up-> Person
+
+Person *--> "1   " Name
+Person *--> "0..1" Appointment
+@enduml

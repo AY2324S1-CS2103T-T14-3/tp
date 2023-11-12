@@ -1,0 +1,30 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+
+start
+:parse() of CommandParser that creates Persons called;
+:handle input argument mapping;
+:call ParserUtil.parseAppointmentIfExist;
+if (Appointment field has user input) then (yes)
+    if (check if user input is delimited properly) then (no)
+        :call Appointment.of();
+        if (can user input be parsed into DateTime objects?) then (yes)
+            :create Appointment instance;
+        else (no)
+            :throw new ParseException;
+            stop
+        endif
+    else (yes)
+        :throw new ParseException;
+        stop
+    endif
+else (no)
+    :return null;
+endif
+:set Appointment as returned value;
+:create new Person instance with parsed fields;
+stop
+
+@enduml
