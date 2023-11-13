@@ -1,0 +1,25 @@
+@startuml
+!include style.puml
+ skinparam ArrowFontStyle plain
+
+participant ":ClearLogCommand" as ClearLogCommand LOGIC_COLOR
+participant ":Model" as Model MODEL_COLOR
+participant ":LogBook" as LogBook MODEL_COLOR
+
+
+-> ClearLogCommand: execute()
+
+alt Logger Tab not empty
+  ClearLogCommand -> Model: addToHistory(this)
+  Model --> ClearLogCommand: Command added to history
+  ClearLogCommand -> Model: setLogBook(new LogBook())
+  Create LogBook
+  Model -> LogBook
+  LogBook --> Model : LogBook created
+  Model --> ClearLogCommand: Updated logBook with an empty LogBook
+  <-- ClearLogCommand: Return CommandResult (Success)
+else Logger Tab is empty
+  <-- ClearLogCommand : Throw CommandException
+end
+
+@enduml

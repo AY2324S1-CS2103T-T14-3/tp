@@ -1,0 +1,23 @@
+@startuml
+!include style.puml
+ skinparam ArrowFontStyle plain
+
+participant ":LogCommand" as LogCommand LOGIC_COLOR
+participant ":Model" as Model MODEL_COLOR
+participant ":LogBook" as LogBook MODEL_COLOR
+
+-> LogCommand: execute()
+
+alt Results from FindCommand not empty
+    LogCommand -> Model: getFoundPersonsList()
+    Model --> LogCommand: List of found persons
+    LogCommand -> LogBook: setPersons(foundPersonsList)
+    LogBook --> LogCommand: Updated logbook
+    LogCommand -> Model: addToHistory(LogCommand)
+    Model --> LogCommand: Command added to history
+    <-- LogCommand : Return CommandResult (Success)
+else Results from FindCommand are empty
+    <-- LogCommand : Throw CommandException
+end
+
+@enduml
