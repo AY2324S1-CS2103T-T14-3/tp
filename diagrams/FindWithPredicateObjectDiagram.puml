@@ -1,0 +1,31 @@
+@startuml
+!include style.puml
+
+object "<u>withAll:FindCommand</u>" as findAll
+object "<u>nameOnly:FindCommand</u>" as findName
+
+object "<u>:CompositePredicate</u>" as combinedPred
+object "<u>:CompositePredicate</u>" as combinedPredB
+
+object "<u>:IdentityPredicate</u>" as truthyPred
+object "<u>:IdContainsKeywordPredicate</u>" as idPred
+object "<u>:AppointmentContainsKeywordPredicate</u>" as apptPred
+object "<u>:NameContainsKeywordPredicate</u>" as namePred
+
+object "<u>:IdentityPredicate</u>" as truthyPredB
+object "<u>:NameContainsKeywordPredicate</u>" as namePredB
+
+findAll -[hidden]right-> findName
+findAll -down-> combinedPred
+
+combinedPred -left-> truthyPred
+combinedPred -down-> idPred
+combinedPred -down-> apptPred
+combinedPred -down-> namePred
+
+findName -down-> combinedPredB
+
+combinedPredB -down-> truthyPredB
+combinedPredB -down-> namePredB
+
+@enduml

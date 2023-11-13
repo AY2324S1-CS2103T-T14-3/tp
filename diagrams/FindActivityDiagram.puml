@@ -1,29 +1,44 @@
 @startuml
-'https://plantuml.com/activity-diagram-beta
+!include style.puml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
 
 start
 :Enter Find Command;
 
-if () then (parameter is NRIC or name)
-  if () then (parameter is NRIC)
-    :NRIC is parsed;
-    if () then (a patient has a matching NRIC)
-    :return patient details for matched patient;
-    else (no patient has a matching NRIC)
-    :notify the user that no patient was found;
-    endif
-
-  else (parameter is name)
-    :name is parsed;
-    if () then (patients have matching names)
-    :return patient details for all matched patients;
-    else (no patient has a matching name)
-    :notify the user that no patient was found;
-    endif
+if () then ([parameter has only ID, name and appointment])
+  :create new CompositePredicate;
+  if () then ([has ID in params])
+    :ID is parsed as
+    IdContainsKeywordPredicate
+    and added to CompositePredicate;
+  else ([no ID in params])
+  endif
+  if () then ([has name in params])
+    :name is parsed as
+    NameContainsKeywordPredicate
+    and added to CompositePredicate;
+    else ([no name in params])
+  endif
+  if () then ([has appointment in params])
+    :name is parsed as
+    AppointmentOverlapsPredicate
+    and added to CompositePredicate;
+    else ([no appointment in params])
   endif
 
-else (parameter is neither NRIC nor name)
-  :Exception is thrown;
+  if () then ([patients has data matching composite query])
+  :display patient details
+  for all matched patient;
+  else ([no patient match the composite query])
+  :notify the user that
+  no patient was found;
+  endif
+
+else ([parameter does not have any of the fields, or has other fields])
+  :throw new ParseException;
+  stop
 endif
 
 stop

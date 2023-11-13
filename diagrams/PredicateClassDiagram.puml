@@ -1,0 +1,46 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR_T4
+skinparam classBackgroundColor MODEL_COLOR
+skinparam classAttributeIconSize 0
+skinparam Class {
+    FontColor #FFFFFF
+    FontSize 15
+    BorderThickness 1
+    BorderColor #000000
+    StereotypeFontColor #000000
+    FontName Arial
+}
+
+class "<<interface>>\nPredicate"<Person> {
+    <color:#FFFFFF>+ test(): boolean</color>
+}
+
+package Model {
+    class CompositePredicate {
+        <color:#FFFFFF>+ add(Predicate<Person> e)</color>
+    }
+    class IdentityPredicate
+    class NameContainsKeywordPredicate
+    class IdContainsKeywordPredicate
+    class AppointmentOverlapsPredicate
+}
+
+show "<<interface>>\nPredicate" members
+show CompositePredicate members
+
+CompositePredicate .|> "<<interface>>\nPredicate"
+IdentityPredicate .|> "<<interface>>\nPredicate"
+NameContainsKeywordPredicate .|> "<<interface>>\nPredicate"
+AppointmentOverlapsPredicate .up|> "<<interface>>\nPredicate"
+IdContainsKeywordPredicate .up|> "<<interface>>\nPredicate"
+
+IdentityPredicate -[hidden]down-> NameContainsKeywordPredicate
+CompositePredicate -[hidden]down-> IdentityPredicate
+NameContainsKeywordPredicate -[hidden]down-> AppointmentOverlapsPredicate
+AppointmentOverlapsPredicate -[hidden]down-> IdContainsKeywordPredicate
+
+CompositePredicate -right-> "*" "<<interface>>\nPredicate" : composites >
+CompositePredicate -down-> "1" IdentityPredicate : has default >
+@enduml
