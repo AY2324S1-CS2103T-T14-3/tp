@@ -41,6 +41,6 @@ CompositePredicate -[hidden]down-> IdentityPredicate
 NameContainsKeywordPredicate -[hidden]down-> AppointmentOverlapsPredicate
 AppointmentOverlapsPredicate -[hidden]down-> IdContainsKeywordPredicate
 
-CompositePredicate -right-> "*" "<<interface>>\nPredicate" : composites >
-CompositePredicate -down-> "1" IdentityPredicate : has default >
+CompositePredicate *-right-> "*" "<<interface>>\nPredicate" : composites >
+CompositePredicate *-down-> "1" IdentityPredicate : has default >
 @enduml
