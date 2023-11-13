@@ -380,8 +380,11 @@ The `DeleteCommand` allows users to delete a patient's profile or a specified fi
 The `DeleteCommand` is implemented as follows:
 - **Command Word**: The command word for this feature is `delete`
 - **Usage**: Users invoke the `DeleteCommand` by specifying the command word, followed by the name or IC of the person they wish to delete and any fields they wish to delete.
-- **Command Format**: `delete n/Name or id/IC_Number[Fields] ...`
-- **DeletePersonDescriptor**: The `DeleteCommand` relies on an `DeletePersonDescriptor` to capture which fields the user wishes to delete from the patient's profile. The descriptor will be passed to the `DeleteCommand` to execute the deletion.
+- **Command Format**: 
+  - `delete n/Name [Fields] ...`
+  - `delete id/IC_Number [Fields] ...`
+  - `delete n/Name id/IC_Number [Fields] ...`
+- **DeletePersonDescriptor**: The `DeleteCommand` relies on an `DeletePersonDescriptor` to capture which fields the user wishes to delete from the patient's profile. The descriptor will be passed to the `DeleteCommand` to execute the deletion. Currently, only `Appointment` and `MedicalHistory` can be deleted as they are optional.
 - **Validation**: The `DeleteCommand` performs validation to ensure that the IC or Name provided is valid.
 - **Execution**: When executed, the `DeleteCommand` identifies the patient to be deleted based on the provided name or IC. When the patient is found, if no there are no specified fields to delete, the entire patient profile will be deleted from the database. Otherwise, the specified fields will be deleted from the patient's profile.
 
@@ -458,7 +461,10 @@ The `EditCommand` allows users to modify the details of an existing person withi
 The `EditCommand` is implemented as follows:
 - **Command Word**: The command word for this feature is `edit`.
 - **Usage**: Users invoke the `EditCommand` by specifying the command word, followed by the name or IC of the person they wish to edit and the fields they wish to modify.
-    - The command format is: `edit n/NAME or id/IC_NUMBER [Fields] ...`.
+- **Command Format**: 
+  - `edit n/Name [Fields] ...`
+  - `edit id/IC_Number [Fields] ...`
+  - `edit n/Name id/IC_Number [Fields] ...`
 - **EditPersonDescriptor**: The `EditCommand` relies on an `EditPersonDescriptor` to capture the details to edit the person with. This descriptor allows for updating various attributes of the person, such as phone, email, address, appointment, and medical histories.
 - **Validation**: The `EditCommand` performs validation to ensure at least one field to edit is provided. It also checks for consistency when both a name and IC are provided.
 - **Execution**: When executed, the `EditCommand` identifies the person to edit based on the provided name and/or IC. If the person is found, it creates an `editedPerson` with the desired changes. The person is then updated with the new details.
@@ -495,7 +501,10 @@ The `FindCommand` allows users to find existing person(s) within the patient lis
 The `FindCommand` is implemented as follows:
 - **Command Word**: The command word for this feature is `find`.
 - **Usage**: Users invoke the `FindCommand` by specifying the command word, followed by the name or NRIC of the person(s) they wish to find.
-    - The command format is: `find n/NAME` or `find id/IC_NUMBER`.
+- **Command Format**: 
+  - `find n/Name [Fields] ...`
+  - `find id/IC_Number [Fields] ...`
+  - `find n/Name id/IC_Number [Fields] ...`
 - **`execute` method**: The `FindCommand` executes the search by using the specified predicates (`NameContainsKeywordsPredicate` or `IdContainsKeywordsPredicate`) to filter and list all persons matching the search criteria.
 - **Validation**: The `FindCommand` performs validation to ensure at least one keyword is provided. It searches based on either name or NRIC, to speed up the search and prevent possible conflicts if name and NRIC do not match each other.
 - **Execution**: When executed, the `FindCommand` identifies the person(s) being searched for based on the provided name or NRIC. If a name is provided as keyword, a `FindCommand(NameContainsKeywordsPredicate)` is created, and if an NRIC is provided as keyword, a `FindCommand(IdContainsKeywordsPredicate)` is created. `updateFilteredPersonList` will then update the filter of the filtered person list to filter by the given name or NRIC predicate (keyword).
