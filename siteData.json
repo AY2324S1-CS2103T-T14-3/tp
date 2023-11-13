@@ -51,7 +51,7 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
+        "undo-feature": "Undo feature",
         "implementation-of-singular-optional-fields": "Implementation of Singular, Optional Fields",
         "implementation-of-appointment-field": "Implementation of Appointment Field",
         "delete-feature": "Delete Feature",

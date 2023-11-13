@@ -1,0 +1,36 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+
+
+start
+:Execute "undo" command;
+if () then ([Command valid])
+  :Retrieve command history from model;
+  if () then ([Valid number of steps])
+    :Execute undo;
+  else ([else])
+    :Return error message;
+    stop
+  endif
+else ([else])
+  :Return error message;
+  stop
+endif
+
+repeat :Pop command from history;
+:Undo the command;
+:Update model state;
+
+repeat while () is ([More steps to undo])
+-> [Else];
+
+:Return CommandResult;
+  stop
+
+@enduml
+
+
+
+
