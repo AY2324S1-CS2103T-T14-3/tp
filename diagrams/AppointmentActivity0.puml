@@ -4,27 +4,31 @@ skinparam ActivityFontSize 15
 skinparam ArrowFontSize 12
 
 start
-:parse() of CommandParser that creates Persons called;
+:CommandParser.parse() called;
+if () then ([Person will be created])
 :handle input argument mapping;
-:call ParserUtil.parseAppointmentIfExist;
-if (Appointment field has user input) then (yes)
-    if (check if user input is delimited properly) then (no)
+:ParserUtil.parseAppointmentIfExist() called;
+if () then ([appointment field has user input])
+    if () then ([user input is delimited properly])
         :call Appointment.of();
-        if (can user input be parsed into DateTime objects?) then (yes)
+        if () then ([DateTimeFormatter can parse input])
             :create Appointment instance;
-        else (no)
+        else ([DateTimeException thrown])
             :throw new ParseException;
             stop
         endif
-    else (yes)
+    else ([user input is not delimited properly])
         :throw new ParseException;
         stop
     endif
-else (no)
+else ([no appointment field in user input])
     :return null;
 endif
 :set Appointment as returned value;
 :create new Person instance with parsed fields;
+stop
+
+else ([Person will not be created])
 stop
 
 @enduml
