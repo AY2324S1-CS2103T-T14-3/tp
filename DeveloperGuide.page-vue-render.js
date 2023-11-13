@@ -140,7 +140,7 @@ with(this){return _c('h4',{attrs:{"id":"description"}},[_v("Description"),_c('a'
 with(this){return _c('p',[_v("The Undo feature allows users to revert an undo-able command. The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("UndoCommand")]),_v(" serves as the entry point for users to\ninitiate the undo process.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implentation-details"}},[_v("Implentation details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implentation-details","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details"}},[_v("Implementation details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("UndoCommand")]),_v(" is implemented as follows:")])}
@@ -245,7 +245,7 @@ with(this){return _c('h4',{attrs:{"id":"description-2"}},[_v("Description"),_c('
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(" allows users to delete a patient's profile or a specified field from the patient's profile.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-details"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details-2"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-2","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(" is implemented as follows:")])}
@@ -305,7 +305,7 @@ with(this){return _c('h4',{attrs:{"id":"description-3"}},[_v("Description"),_c('
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EditCommand")]),_v(" allows users to modify the details of an existing person within the address book.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-details-2"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-2","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details-3"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-3","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EditCommand")]),_v(" is implemented as follows:")])}
@@ -332,7 +332,7 @@ with(this){return _c('h3',{attrs:{"id":"find-feature-and-its-related-predicate-c
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" allows users to find existing person(s) within the patient list,\nusing their Name, NRIC and/or Appointment, and view their field data. This is done with aid by the concreted "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Predicate")]),_v("\nclasses, that directly implement the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Predicate")]),_v(" functional interface given by the Java package.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-details-3"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-3","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details-4"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-4","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" is implemented as follows:")])}
@@ -383,7 +383,7 @@ with(this){return _c('h4',{attrs:{"id":"description-4"}},[_v("Description"),_c('
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("LogCommand")]),_v(" allows users to log patient profiles which are the results of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" to the Logger Tab.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-details-4"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-4","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details-5"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-5","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("LogCommand")]),_v(" is implemented as follows:")])}
@@ -413,7 +413,7 @@ with(this){return _c('h4',{attrs:{"id":"description-5"}},[_v("Description"),_c('
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AppendLogCommand")]),_v(" allows users to append patient profiles which are the results of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("FindCommand")]),_v(" to the existing profiles in the Logger Tab.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-details-5"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-5","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details-6"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-6","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AppendLogCommand")]),_v(" is implemented as follows:")])}
@@ -443,7 +443,7 @@ with(this){return _c('h4',{attrs:{"id":"description-6"}},[_v("Description"),_c('
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ClearLogCommand")]),_v(" allows users to delete all the patient profiles in the Logger Tab.")])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"implementation-details-6"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-6","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('h4',{attrs:{"id":"implementation-details-7"}},[_v("Implementation Details"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#implementation-details-7","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ClearLogCommand")]),_v(" is implemented as follows:")])}
@@ -773,6 +773,6 @@ with(this){return _c('h2',{attrs:{"id":"appendix-planned-enhancements"}},[_c('st
 with(this){return _c('ol',[_c('li',[_c('p',[_c('strong',[_v("Handling Patients with Same Name:")]),_v("\nCurrently, HealthSync cannot manage scenarios where patients share the same name.\nWe plan to enhance this by allowing users to add patients with identical names,\nproviding a more robust and flexible patient management system.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Improved UI Text Wrapping:")]),_v("\nHealthSync currently struggles with text wrapping on the UI, leading to obscured\nlabels for long user inputs. Our plan is to explicitly denote labels on individual UI\ncards and enable inputs to stretch their containers, ensuring better visibility for\nusers, even with lengthy inputs.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Enhanced Edit Feature Feedback:")]),_v("\nThe current edit feature does not explicitly handle cases where no fields are\nedited after a change. For instance, if a patient's phone number remains the same\nafter an edit operation, HealthSync doesn't provide a special message indicating that no\nfields were edited. We plan to improve this feedback for a more informative user experience.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Standardized Empty Optional Fields:")]),_v("\nHealthSync currently displays empty optional fields inconsistently in particular, for Appointment and Medical History.\nWe intend to standardize the display of empty optional fields to be 'N/A' uniformly,\nenhancing clarity and consistency in the user interface.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Improved Email Validation:")]),_v(" HealthSync's current email validation is not\nstringent enough, accepting invalid email formats. We plan to implement more thorough\nemail validation to ensure only valid email addresses are accepted.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Consistent Capitalization of Patient IDs:")]),_v("\nWhile IDs are case-insensitive, HealthSync does not enforce consistent capitalization\nof patient IDs in the patient list. This is a cosmetic enhancement to maintain\nuniformity in the application.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Case-Insensitive Find Feature for Appointments:")]),_v("\nThe current Find feature for appointments is case-sensitive, potentially causing\ninconvenience for users. We plan to enhance this feature to be case-insensitive,\nensuring a smoother and more user-friendly experience.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Improved Messaging for Empty Find Results:")]),_v("\nWhen a Find command results in an empty set, the output message currently\nreads '0 patients found.' We propose an enhancement to provide a clearer message\nsuch as 'No patients found,' offering better clarity and user understanding.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Improved Patient Clearing Process:")]),_v("\nCurrently, HealthSync allows users to use the shortcut "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("c")]),_v(" to clear all patients in the\nHealthSync application. While this provides a quick method for clearing patient data, it lacks\na safeguard against accidental data loss. We propose an enhancement to the patient clearing\nprocess by introducing a warning popup. When a user triggers the patient clearing shortcut 'c',\na confirmation popup will appear, prompting the user to double-check their intention before\nproceeding with the clearance.")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 3:10:24 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 3:11:54 GMT+8]")])])])}
 }];
   
