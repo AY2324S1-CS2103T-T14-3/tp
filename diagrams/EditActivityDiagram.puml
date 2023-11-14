@@ -4,14 +4,38 @@ skinparam ActivityFontSize 15
 skinparam ArrowFontSize 12
 
 start
-:User executes command;
+:Enter edit command;
+:Parse arguments;
 
-if () then ([Valid Details])
-  :Update Model with New Details;
-else ([Else])
+if () then ([arguments valid])
+
+:Execute edit command;
+:Find Patient data;
+
+if () then ([patient data found?])
+
+:Save original person state;
+:Create edited person with edit descriptor;
+:Execute edit operation in model;
+:Update filtered person list in model;
+:Add command to history;
+:Return success message (MESSAGE_EDIT_PATIENT_SUCCESS);
+else ([no])
+
+:Notify user of failure;
 endif
+
+else ([no])
+
+:Notify user of failure;
+
+endif
+
 stop
+
+
 @enduml
+
 
 
 
