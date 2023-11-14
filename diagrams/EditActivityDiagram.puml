@@ -14,11 +14,9 @@ if () then ([arguments valid])
 
 if () then ([patient data found?])
 
-:Save original person state;
 :Create edited person with edit descriptor;
 :Execute edit operation in model;
 :Update filtered person list in model;
-:Add command to history;
 :Return success message (MESSAGE_EDIT_PATIENT_SUCCESS);
 else ([no])
 
